@@ -1,0 +1,29 @@
+﻿<div ng-controller="employeesController">
+    <br />
+    <a href="/new" class="btn btn-primary">Add New Employee</a>
+    <br/>
+    <br/>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Job Title</th>
+                    <th>Employment Date</th>
+                    <th>Rate</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in Employees">
+                    <th>{{employee.Name}}</th>
+                    <th>{{employee.JobTitle}}</th>
+                    <th>{{employee.EmployementDate | date:'M/dd/yyyy'}}</th>
+                    <th>{{employee.Rate | currency}}</th>
+                    <th><button  ng-confirm-click="Are you sure to delete this user ?" confirmed-click="removeUser(employee.Id)">Delete</button></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
